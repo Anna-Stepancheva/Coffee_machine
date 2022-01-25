@@ -1,9 +1,7 @@
 package ru.pcs.web.controller;
-
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,9 +30,10 @@ public class CoffeeMachineController {
         coffeeMachineService.off();
     }
 
-    @PostMapping("/work")
-    @ApiOperation("Команда варить кофе")
-    public void work(){
-        coffeeMachineService.work();
+    @PostMapping("/{coffee-id}/{water-volume-id}/work")
+    @ApiOperation("Сварить кофе определенного сорта и объема")
+    public void work(@PathVariable("coffee-id") int coffeeId,
+                     @PathVariable("water-volume-id") int waterVolumeId) {
+        coffeeMachineService.work(coffeeId, waterVolumeId);
     }
 }

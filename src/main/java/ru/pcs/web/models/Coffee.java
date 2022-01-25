@@ -7,18 +7,13 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Builder
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "commands")
-public class Command {
+public class Coffee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String command;
-
-    private int coffeeId;
-
-    private int waterVolumeId;
+    private String name;
 }
