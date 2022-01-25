@@ -32,8 +32,8 @@ public class CoffeeMachineController {
 
     @PostMapping("/{coffee-id}/{water-volume-id}/work")
     @ApiOperation("Сварить кофе определенного сорта и объема")
-    public void work(@PathVariable("coffee-id") int coffeeId,
-                     @PathVariable("water-volume-id") int waterVolumeId) {
+    public void work(@PathVariable("coffee-id") Integer coffeeId,
+                     @PathVariable("water-volume-id") Integer waterVolumeId) {
         coffeeMachineService.work(coffeeId, waterVolumeId);
     }
 }

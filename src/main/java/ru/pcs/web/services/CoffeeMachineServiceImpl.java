@@ -30,18 +30,20 @@ public class CoffeeMachineServiceImpl implements CoffeeMachineService {
     }
 
     @Override
-    public void work(int coffeeId, int waterVolumeId) {
-        Command command = new Command();
+    public void work(Integer coffeeId, Integer waterVolumeId) {
+        Command command;
 
         if (coffeeRepository.existsById(coffeeId)
                 & (waterVolumeRepository.existsById(waterVolumeId))) {
-            command = Command.builder()
+             command = Command.builder()
                     .command("Кофе сварено")
                     .coffeeId(coffeeId)
                     .waterVolumeId(waterVolumeId)
                     .build();
         } else{
-            command.setCommand("Ошибка при вводе данных");
+             command = Command.builder()
+                    .command("Ошибка при вводе данных")
+                     .build();
         }
         commandRepository.save(command);
     }

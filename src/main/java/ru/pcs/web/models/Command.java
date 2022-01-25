@@ -18,7 +18,7 @@ public class Command {
 
     private String command;
 
-    private int coffeeId;
+    private Integer coffeeId;
 
-    private int waterVolumeId;
+    private Integer waterVolumeId;
 }

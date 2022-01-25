@@ -6,5 +6,5 @@ public interface CoffeeMachineService {
 
     void off();
 
-    void work(int coffeeId, int waterVolumeId);
+    void work(Integer coffeeId, Integer waterVolumeId);
 }
